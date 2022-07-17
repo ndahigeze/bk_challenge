@@ -15,6 +15,11 @@ public class OrderDrinks {
     @ManyToOne
     private CargoDrink drink;
 
+    public OrderDrinks(Order order, CargoDrink drink) {
+        this.order = order;
+        this.drink = drink;
+    }
+
     public Long getId() {
         return id;
     }

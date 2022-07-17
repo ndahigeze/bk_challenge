@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface OrderService {
     Order findById(long id);
-    List<Order> findByClient(Client cLient);
+    List<Order> findByClient(long client);
     List<Order>  topOrders(int counter);
     List<Order> topPaid(int counter);
     void create(Order order);
-    Order changeStatus(Order order);
+    Order changeStatus(long orderId,String status);
 }

@@ -12,6 +12,15 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    public Order() {
+    }
+
+    public Order(double totalPrice, int number_of_drinks, Client client) {
+        this.totalPrice = totalPrice;
+        this.number_of_drinks = number_of_drinks;
+        this.client = client;
+    }
+
     private OrderStatus status=OrderStatus.PENDING;
     private double totalPrice;
     private int number_of_drinks;

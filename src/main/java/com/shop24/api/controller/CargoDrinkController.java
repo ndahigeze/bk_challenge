@@ -29,12 +29,13 @@ public class CargoDrinkController {
         return new ResponseEntity<Object>(drink, HttpStatus.OK);
     }
 
+
     @RequestMapping(value = "cargo/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> findCargo(@PathVariable("id") long id, HttpServletRequest request){
         return new ResponseEntity<Object>(cargoDrinkService.findByCargoId(id), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "clients/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "nearest/clients/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> findNearlestCargoDrinks(@PathVariable("id") long id, HttpServletRequest request){
         return new ResponseEntity<Object>(cargoDrinkService.findAvailableNearlestCargoDrink(clientService.findById(id)), HttpStatus.OK);
     }
