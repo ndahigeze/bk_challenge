@@ -15,6 +15,9 @@ public class OrderDrinks {
     @ManyToOne
     private CargoDrink drink;
 
+    public OrderDrinks() {
+    }
+
     public OrderDrinks(Order order, CargoDrink drink) {
         this.order = order;
         this.drink = drink;

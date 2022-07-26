@@ -2,7 +2,6 @@ package com.shop24.api.serviceImpl;
 
 import com.shop24.api.dao.OrderDrinkRepository;
 import com.shop24.api.model.CargoDrink;
-import com.shop24.api.model.Client;
 import com.shop24.api.model.Order;
 import com.shop24.api.model.OrderDrinks;
 import com.shop24.api.service.CargoDrinkService;

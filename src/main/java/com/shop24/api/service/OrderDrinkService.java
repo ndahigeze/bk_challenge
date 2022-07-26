@@ -1,8 +1,5 @@
 package com.shop24.api.service;
 
-import com.shop24.api.model.CargoDrink;
-import com.shop24.api.model.Client;
-import com.shop24.api.model.Order;
 import com.shop24.api.model.OrderDrinks;
 
 import java.util.List;
