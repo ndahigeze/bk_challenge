@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "order_client/")
+@RequestMapping(path = "order_drinks/")
 public class OrderDrinksController {
     @Autowired
     private OrderService orderService;

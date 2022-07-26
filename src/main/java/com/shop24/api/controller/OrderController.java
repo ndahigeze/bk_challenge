@@ -1,6 +1,5 @@
 package com.shop24.api.controller;
 
-import com.shop24.api.model.Cargo;
 import com.shop24.api.model.Order;
 import com.shop24.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +13,19 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(path = "order/")
-public class OrderServiceController {
+public class OrderController {
     @Autowired
     private OrderService orderService;
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> update(@Validated @RequestBody Order order, HttpServletRequest request){
         orderService.create(order);
+        return new ResponseEntity<Object>(order, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/change_status/{order_id}/{status}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> changeStatus(@PathVariable("order_id")long id,@PathVariable("status") String status,@Validated @RequestBody Order order, HttpServletRequest request){
+        orderService.changeStatus(id,status);
         return new ResponseEntity<Object>(order, HttpStatus.OK);
     }
 
